@@ -11,8 +11,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.40")
-        classpath("net.serenity-bdd:serenity-emailer:1.9.40")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.42")
+        classpath("net.serenity-bdd:serenity-emailer:1.9.42")
     }
 }
 
