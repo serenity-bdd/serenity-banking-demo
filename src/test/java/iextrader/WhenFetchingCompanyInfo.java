@@ -1,4 +1,4 @@
-package starter;
+package iextrader;
 
 import io.restassured.RestAssured;
 import net.serenitybdd.junit.runners.SerenityRunner;
