@@ -1,4 +1,4 @@
-package starter;
+package iextrader;
 
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
