@@ -2,16 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.serenitydojo.iextrader</groupId>
-    <artifactId>iextrader</artifactId>
+    <groupId>com.serenitydojo</groupId>
+    <artifactId>reg-reporting</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Simple project demonstrating REST API testing with Serenity BDD</name>
+    <name>Regulatory Reporting Controls</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>1.9.45</serenity.version>
+        <serenity.version>1.9.46-SNAPSHOT</serenity.version>
         <serenity.maven.version>1.9.45</serenity.maven.version>
         <serenity.cucumber.version>1.9.15</serenity.cucumber.version>
         <encoding>UTF-8</encoding>
@@ -121,6 +121,7 @@
                         <include>**/Test*.java</include>
                         <include>**/*TestSuite.java</include>
                         <include>**/When*.java</include>
+                        <include>**/features/**/*.java</include>
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
@@ -156,6 +157,11 @@
                     <reports>email</reports>
                 </configuration>
                 <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
                     <dependency>
                         <groupId>net.serenity-bdd</groupId>
                         <artifactId>serenity-emailer</artifactId>

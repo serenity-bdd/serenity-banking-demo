@@ -1,4 +1,4 @@
-package iextrader;
+package reporting_controls;
 
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
