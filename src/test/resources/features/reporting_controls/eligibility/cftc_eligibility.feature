@@ -2,9 +2,6 @@
 @jurisdiction:cftc
 Feature: Determining CFTC eligibility
 
-  As a a
-  I want b
-  So that c
 
   The U.S. Commodity Futures Trading Commission is an independent agency of the US government created in 1974, that regulates futures and option markets.
   The stated mission of the CFTC is to foster open, transparent, competitive, and financially sound markets, to avoid systemic risk,

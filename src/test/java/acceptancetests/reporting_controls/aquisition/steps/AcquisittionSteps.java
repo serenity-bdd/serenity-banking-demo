@@ -1,4 +1,4 @@
-package features.reporting_controls.aquisition.steps;
+package acceptancetests.reporting_controls.aquisition.steps;
 
 import net.thucydides.core.annotations.Step;
 

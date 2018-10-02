@@ -1,4 +1,4 @@
-package reporting_controls;
+package acceptancetests.reporting_controls;
 
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.core.Serenity;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriverException;
@@ -68,6 +69,9 @@ public class StepDefinitions {
 
     @When("^the transaction is processed$")
     public void the_transaction_is_processed() {
+       Serenity.recordReportData()
+               .withTitle("Transaction details")
+               .andContents("####Transaction Details\nABC;DEF;123;567;100.00");
     }
 
     @Then("^the transaction should become:$")
@@ -114,5 +118,80 @@ public class StepDefinitions {
     @When("^a trade has a counterparty domiciled in Canada$")
     public void aTradeHasACounterpartyDomiciledInCanada() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+    }
+
+
+    @Given("^a customer who is domiciled in (.*)")
+    public void a_customer_who_is_domiciled_in(String country) {
+    }
+
+
+    @When("^his risk coefficient is calculated$")
+    public void his_risk_coefficient_is_calculated() {
+    }
+
+    @Then("^his country risk factor should be (.*)$")
+    public void his_country_risk_factor_should_be(float rating) {
+    }
+
+    @Then("^the risk rating should be (.*)$")
+    public void theRiskRatingShouldBeRiskRating(String expectedRating) throws Throwable {
+    }
+
+    @And("^who comes from (.*)$"    )
+    public void whoComesFromOrigin(String origin) {
+        // Write code here that turns the phrase above into concrete actions
+    }
+
+    @Given("^Joe is a prospective customer who is domiciled in (.*)$")
+    public void joeIsAProspectiveCustomerWhoIsDomiciledInDomicile(String domicile) throws Throwable {
+    }
+
+    @When("^the country has a risk factor that is (.*), such as (.*)")
+    public void theCountryIsCountry(String riskFactor, String country) throws Throwable {
+    }
+
+    @When("^his overall country risk is calculated$")
+    public void hisOverallCountryRiskIsCalculated() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+    }
+
+    @Then("^the overall risk category should be (.*)$")
+    public void theOverallRiskCategoryShouldBeRisk(String risk) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+    }
+
+
+
+    @When("^a customer works in (.*)")
+    public void a_customer_works_in_Casino(String business) {
+    }
+
+
+    @Then("^their base business activity risk factor should be (\\d+)$")
+    public void their_base_business_activity_risk_factor_should_be(int risk) {
+    }
+
+
+
+
+    @When("^a customer with a business risk factor of (.*), such as for a (.*) business$")
+    public void a_customer_with_a_business_risk_factor_of_or_above_such_as_for_a_Casino_business(String risk, String business) {
+    }
+
+    @When("^the business been operation for more than two years$")
+    public void the_business_been_operation_for_more_than_two_years() {
+    }
+
+    @Then("^their business activity risk rating should be (.*)")
+    public void their_business_activity_risk_rating_should_be(String risk) {
+    }
+
+    @When("^a customer with a business risk factor of (.*), such as for a (.*)  business$")
+    public void aCustomerWithABusinessRiskFactorOfRiskFactorSuchAsForABusinessCategoryBusiness(int risk, String category) throws Throwable {
+    }
+
+    @When("^a business of type (.*) established on (.*) applies to open an account on (.*)$")
+    public void aBusinessAppliesToOpenAnAccount(String business, String startDate, String applicationDate) throws Throwable {
     }
 }

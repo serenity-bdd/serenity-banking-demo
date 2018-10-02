@@ -1,6 +1,6 @@
-package features.reporting_controls.aquisition;
+package acceptancetests.reporting_controls.aquisition;
 
-import features.reporting_controls.aquisition.steps.AcquisittionSteps;
+import acceptancetests.reporting_controls.aquisition.steps.AcquisittionSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Narrative;
 import net.thucydides.core.annotations.Pending;

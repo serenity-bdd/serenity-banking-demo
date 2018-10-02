@@ -16,7 +16,7 @@ Feature: Reportable state
   {Scenario} Transactions reportable by a non-DB
 
   @jurisdiction:mifid2
-  Scenario: Transactions reportable by DB (!@£$%^&*[]{}\|'";:,<.>/?`~)
+  Scenario: Transactions reportable by DB
   For example, for MiFID-II transaction reporting, this will always be the case
 
     Given the following transation is reportable
