@@ -27,36 +27,36 @@ Feature: Reportable state
       | Trade ID | Jurisdiction | State            |
       | 101      | MIFID-2      | Reportable by DB |
 
-  @jurisdiction:bundesbank
+  @jurisdiction:volcker
   Scenario: Transactions reportable by a non-DB
     Given the following transation is reportable
       | Trade ID | Jurisdiction | State      |
-      | 101      | Bundesbank   | Reportable |
+      | 101      | Volcker   | Reportable |
     When the transaction is processed
     Then the transaction should become:
-      | Trade ID | Jurisdiction | State                |
+      | Trade ID | Volcker | State                |
       | 101      | Bundesbank   | Reportable by non-DB |
 
-  @jurisdiction:bundesbank
+  @jurisdiction:volcker
   Scenario: An internal error is generated if the submissibility of a reportable transaction cannot be determined
     Given the following transation is reportable
-      | Trade ID | Jurisdiction | State      |
-      | 101      | Bundesbank   | Reportable |
+      | Trade ID | Volcker | State      |
+      | 101      | Volcker   | Reportable |
     When the transaction is rejected
     Then the transaction should become:
       | Trade ID | Jurisdiction | State          |
-      | 101      | Bundesbank   | Internal Error |
+      | 101      | Volcker   | Internal Error |
 
 
-  @jurisdiction:bundesbank
+  @jurisdiction:volcker
   Scenario: An internal error is generated if the system crashes
     Given the following transation is reportable
       | Trade ID | Jurisdiction | State      |
-      | 101      | Bundesbank   | Reportable |
+      | 101      | Volcker   | Reportable |
     When the transaction is discarded
     Then the transaction should become:
       | Trade ID | Jurisdiction | State          |
-      | 101      | Bundesbank   | Internal Error |
+      | 101      | Volcker   | Internal Error |
 
   @Pending
   @jurisdiction:mifid2
