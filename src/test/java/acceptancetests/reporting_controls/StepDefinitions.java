@@ -7,9 +7,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.core.exceptions.TestCompromisedException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriverException;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class StepDefinitions {
 
@@ -168,8 +174,17 @@ public class StepDefinitions {
     }
 
 
+    static int count = 0;
     @Then("^their base business activity risk factor should be (\\d+)$")
-    public void their_base_business_activity_risk_factor_should_be(int risk) {
+    public void their_base_business_activity_risk_factor_should_be(int risk) throws IOException {
+
+        count++;
+        if (count == 1) {
+            throw new AssertionError("Wrong business activity");
+        }
+        if (count == 4) {
+            throw new IllegalArgumentException("System crashed");
+        }
     }
 
 
@@ -184,7 +199,11 @@ public class StepDefinitions {
     }
 
     @Then("^their business activity risk rating should be (.*)")
-    public void their_business_activity_risk_rating_should_be(String risk) {
+    public void their_business_activity_risk_rating_should_be(String expectedRisk) throws IOException {
+        String sqlQueryResult = "| BUSINESS_ACTIVITY  | RISK |\n" +
+                                "| CASINO             | HIGH |\n" +
+                                "| FUNERAL DIRECTOR   | LOW  |";
+        Serenity.recordReportData().withTitle("Database evidence").andContents(sqlQueryResult);
     }
 
     @When("^a customer with a business risk factor of (.*), such as for a (.*)  business$")
@@ -194,4 +213,25 @@ public class StepDefinitions {
     @When("^a business of type (.*) established on (.*) applies to open an account on (.*)$")
     public void aBusinessAppliesToOpenAnAccount(String business, String startDate, String applicationDate) throws Throwable {
     }
+
+
+    @Given("Joe is a new customer")
+    public void newCustomer() {}
+
+    @Given("Joe lives in the UK")
+    public void livesInUK() {}
+
+    @Given("Joe does not live in the UK")
+    public void livesNotInUK() {
+        throw new TestCompromisedException("External service unavailable");
+    }
+
+    @When("Joe provides one piece of identity and one proof of address")
+    public void providesIdentify() {}
+
+    @When("Joe provides one piece of identity and proof of addresses over the past 3 years")
+    public void providesIdentifyEnhanced() {}
+
+    @Then("his identify should be established")
+    public void identifyEstablished() {}
 }

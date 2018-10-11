@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.4</serenity.version>
+        <serenity.version>2.0.5-SNAPSHOT</serenity.version>
         <serenity.maven.version>2.0.4</serenity.maven.version>
         <serenity.cucumber.version>1.9.15</serenity.cucumber.version>
         <encoding>UTF-8</encoding>
@@ -81,6 +81,12 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-emailer</artifactId>
+            <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

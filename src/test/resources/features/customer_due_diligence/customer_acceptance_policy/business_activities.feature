@@ -1,8 +1,6 @@
 Feature: Business Activities
 
-  Some business activities are considered more risk-prone than others.
-  Although any type of account is potentially vulnerable to money laundering or terrorist financing,
-  by the nature of their business, occupation, or anticipated transaction activity, certain customers and entities may pose specific risks.
+  Some business activities are considered more risk-prone than others, and certain customers and entities may pose specific risks.
 
   The business activity risk factor for an industry is determined by the potential risk they present to the bank. For example:
 
@@ -18,6 +16,7 @@ Feature: Business Activities
   {Examples} Businesses established less than 2 years ago are considered higher risk
 
 
+  @pending
   Scenario Outline: The business activity risk factor for an industry
 
   The industry risk factor is a value from 0 to 10.
@@ -53,7 +52,7 @@ Feature: Business Activities
     Then their business activity risk rating should be <Risk Rating>
 
     Examples:
-      | Business Start Date | Application Date | Business Category    | Risk Rating  |
-      | 01-01-2016          | 31-12-2017       | Software Development | Medium       |
-      | 01-01-2018          | 31-01-2018       | Jewellery Store      | High         |
-      | 01-01-2018          | 31-01-2018       | Casino               | Unacceptable |
+      | Business Start Date | Application Date | Business Category    | Risk Rating  |   Business Start Date | Application Date | Business Category    | Risk Rating  |   Business Start Date | Application Date | Business Category    | Risk Rating  |   
+      | 01-01-2016          | 31-12-2017       | Software Development | Medium       |   01-01-2016          | 31-12-2017       | Software Development | Medium       |   01-01-2016          | 31-12-2017       | Software Development | Medium       |   
+      | 01-01-2018          | 31-01-2018       | Jewellery Store      | High         |   01-01-2018          | 31-01-2018       | Jewellery Store      | High         |   01-01-2018          | 31-01-2018       | Jewellery Store      | High         |   
+      | 01-01-2018          | 31-01-2018       | Casino               | Unacceptable |   01-01-2018          | 31-01-2018       | Casino               | Unacceptable |   01-01-2018          | 31-01-2018       | Casino               | Unacceptable |   

@@ -1,6 +1,7 @@
 Feature: Country risk ratings
 
-  Both country of origin and country of domicile are used as factors in determining whether the bank wishes to do business with a given customer. Each country is given a risk coefficient between 0 (low risk) and 10 (high risk).
+  Both country of origin and country of domicile are used as factors in determining whether the bank wishes to do business with a given customer.
+  Each country is given a risk coefficient between 0 (low risk) and 10 (high risk).
 
   For example:
 

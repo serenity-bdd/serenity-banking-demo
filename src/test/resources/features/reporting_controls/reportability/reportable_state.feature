@@ -9,14 +9,14 @@ Feature: Reportable state
   * Reportable by non-DB
   * Aquisition
 
-  If DB is a reporting party of this transaction event - for some reporting obligations, this will always be the case for a reportable trade.
-  {Scenario} Transactions reportable by DB
+  If the bank is a reporting party of this transaction event - for some reporting obligations, this will always be the case for a reportable trade.
+  {Scenario} Transactions reportable by the bank
 
-  If DB is not the reporting party of this transaction event, the transaction moves to `Reportable by non-DB`
-  {Scenario} Transactions reportable by a non-DB
+  If the bank is not the reporting party of this transaction event, the transaction moves to `Reportable by non-DB`
+  {Scenario} Transactions reportable by another organisation
 
   @jurisdiction:mifid2
-  Scenario: Transactions reportable by DB
+  Scenario: Transactions reportable by the bank
   For example, for MiFID-II transaction reporting, this will always be the case
 
     Given the following transation is reportable
@@ -24,39 +24,39 @@ Feature: Reportable state
       | 101      | MIFID-2      | Reportable |
     When the transaction is processed
     Then the transaction should become:
-      | Trade ID | Jurisdiction | State            |
-      | 101      | MIFID-2      | Reportable by DB |
+      | Trade ID | Jurisdiction | State           |
+      | 101      | MIFID-2      | Bank Reportable |
 
   @jurisdiction:volcker
-  Scenario: Transactions reportable by a non-DB
+  Scenario: Transactions reportable by another organisation
     Given the following transation is reportable
       | Trade ID | Jurisdiction | State      |
-      | 101      | Volcker   | Reportable |
+      | 101      | Volcker      | Reportable |
     When the transaction is processed
     Then the transaction should become:
-      | Trade ID | Volcker | State                |
-      | 101      | Bundesbank   | Reportable by non-DB |
+      | Trade ID | Volcker    | State                |
+      | 101      | Bundesbank | Reportable by others |
 
   @jurisdiction:volcker
   Scenario: An internal error is generated if the submissibility of a reportable transaction cannot be determined
     Given the following transation is reportable
       | Trade ID | Volcker | State      |
-      | 101      | Volcker   | Reportable |
+      | 101      | Volcker | Reportable |
     When the transaction is rejected
     Then the transaction should become:
       | Trade ID | Jurisdiction | State          |
-      | 101      | Volcker   | Internal Error |
+      | 101      | Volcker      | Internal Error |
 
 
   @jurisdiction:volcker
   Scenario: An internal error is generated if the system crashes
     Given the following transation is reportable
       | Trade ID | Jurisdiction | State      |
-      | 101      | Volcker   | Reportable |
+      | 101      | Volcker      | Reportable |
     When the transaction is discarded
     Then the transaction should become:
       | Trade ID | Jurisdiction | State          |
-      | 101      | Volcker   | Internal Error |
+      | 101      | Volcker      | Internal Error |
 
   @Pending
   @jurisdiction:mifid2
@@ -67,8 +67,8 @@ Feature: Reportable state
       | 101      | MIFID-2      | Reportable |
     When the transaction is processed
     Then the transaction should become:
-      | Trade ID | Jurisdiction | State            |
-      | 101      | MIFID-2      | Reportable by DB |
+      | Trade ID | Jurisdiction | State                  |
+      | 101      | MIFID-2      | Reportable by the bank |
 
   @Manual
   @jurisdiction:mifid2
@@ -79,6 +79,6 @@ Feature: Reportable state
       | 101      | MIFID-2      | Reportable |
     When the transaction is processed
     Then the transaction should become:
-      | Trade ID | Jurisdiction | State            |
-      | 101      | MIFID-2      | Reportable by DB |
+      | Trade ID | Jurisdiction | State                  |
+      | 101      | MIFID-2      | Reportable by the bank |
 
