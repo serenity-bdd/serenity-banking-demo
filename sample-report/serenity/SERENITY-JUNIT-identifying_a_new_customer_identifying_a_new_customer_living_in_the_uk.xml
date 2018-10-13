@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Identifying a new customer" skipped="1" tests="2" time="0.01" timestamp="2018-10-14 12:49:34"><testcase name="Identifying a new customer living in the UK"/><testcase name="Identifying a new customer not living in the UK"><compromised message="External service unavailable" type="net.serenitybdd.core.exceptions.TestCompromisedException">External service unavailable</compromised><system-err>External service unavailable
+acceptancetests.reporting_controls.StepDefinitions.livesNotInUK(StepDefinitions.java:232)
+✽.Joe does not live in the UK(src/test/resources/features/customer_due_diligence/customer_identification/identifying_a_new_customer.feature:12)
+</system-err></testcase></testsuite>

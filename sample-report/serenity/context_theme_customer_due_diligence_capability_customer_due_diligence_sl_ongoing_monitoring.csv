@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Monitoring new customers","Monitoring a new low risk customer","PENDING","2018-10-14T00:49:34.878+05:30[Asia/Kolkata]","0.0","0.01"
+"Monitoring suspicious cash transactions","Large cash transactions","SUCCESS","2018-10-14T00:49:34.886+05:30[Asia/Kolkata]","0.0","0.07"
+"Monitoring suspicious cash transactions","Many small cash transactions","SUCCESS","2018-10-14T00:49:34.962+05:30[Asia/Kolkata]","0.0","0.01"
+"Monitoring suspicious cash transactions","Many small cash transactions that are in the customer's normal usage patterns","SUCCESS","2018-10-14T00:49:34.973+05:30[Asia/Kolkata]","0.0","0.01"

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Themes</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/all.css">
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/v4-shims.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Customer due diligence","type":"theme","href":"theme_customer_due_diligence_sl_customer_due_diligence.html","nodes":[{"text":"Customer acceptance policy","type":"feature","href":"feature_customer_due_diligence_sl_customer_acceptance_policy.html","nodes":[{"text":"Business activities","type":"feature","href":"feature_customer_acceptance_policy_sl_business_activities.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-exclamation-triangle error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e5 scenarios\u003c/span\u003e"]},{"text":"Country risk ratings","type":"feature","href":"feature_customer_acceptance_policy_sl_country_risk_ratings.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-check-circle-o success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 scenarios\u003c/span\u003e"]},{"text":"Customer risk profiles","type":"feature","href":"feature_customer_acceptance_policy_sl_customer_risk_profiles.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e",""]},{"text":"Enhanced due diligence","type":"feature","href":"feature_customer_acceptance_policy_sl_enhanced_due_diligence.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e",""]},{"text":"Non face to face customers","type":"feature","href":"feature_customer_acceptance_policy_sl_non_face_to_face_customers.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e",""]},{"text":"Politically exposed persons (pep)","type":"feature","href":"feature_customer_acceptance_policy_sl_politically_exposed_persons_(pep).html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e",""]},{"text":"Standard due diligence","type":"feature","href":"feature_customer_acceptance_policy_sl_standard_due_diligence.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e",""]}],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-exclamation-triangle error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e7 features\u003c/span\u003e"]},{"text":"Customer identification","type":"feature","href":"feature_customer_due_diligence_sl_customer_identification.html","nodes":[{"text":"Identifying a new customer","type":"feature","href":"feature_customer_identification_sl_identifying_a_new_customer.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-chain-broken compromised-icon \u0027 title\u003d\u0027COMPROMISED\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e2 scenarios\u003c/span\u003e"]}],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-chain-broken compromised-icon \u0027 title\u003d\u0027COMPROMISED\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 feature\u003c/span\u003e"]},{"text":"Ongoing monitoring","type":"feature","href":"feature_customer_due_diligence_sl_ongoing_monitoring.html","nodes":[{"text":"Monitoring new customers","type":"feature","href":"feature_ongoing_monitoring_sl_monitoring_new_customers.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 scenario\u003c/span\u003e"]},{"text":"Monitoring suspicious cash transactions","type":"feature","href":"feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html","nodes":[],"selectable":false,"tags":["\u003ci class\u003d\u0027fa fa-check-circle-o success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 scenarios\u003c/span\u003e"]}],"selectable":false,"tags":["\u003ci class\u003d\u0027far fa-stop-circle pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e2 features\u003c/span\u003e"]}],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 features\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+        <style>
+            .example-table-in-scenario th:last-child {
+                border-right: solid white 1px;
+                border-top: solid white 1px;
+                border-bottom: solid white 1px;
+            }
+
+            .example-table-in-scenario td:last-child {
+                border-right: solid white 1px;
+                border-top: solid white 1px;
+                border-bottom: solid white 1px;
+            }
+
+            .scenario-docs table.dataTable {
+                border: 0px !important;
+            }
+
+        </style>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">Customer Due Diligence and Regulatory Reporting</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="theme_customer_due_diligence.html">Customer Due Diligence</a>
+
+
+                > <span class="truncate-40">Customer Due Diligence</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Themes</a>
+        </li>
+        <li >
+            <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 00:49</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Theme:  Customer Due Diligence</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                Supervisors around the world are increasingly recognising the importance of ensuring that their banks have adequate controls and procedures in place so that they know the customers with whom they are dealing. Adequate due diligence on new and existing customers is a key part of these controls. Without this due diligence, banks can become subject to reputational, operational, legal and concentration risks, which can result in significant financial cost.</p>
+<p>Banks are required to &quot;have in place adequate policies, practices and procedures that promote high ethical and professional standards and prevent the bank from being used, intentionally or unintentionally, by criminal elements&quot;.</p>
+<p>Certain key elements should be included by banks in the design of KYC programmes. Such essential elements should start from the banks’ risk management and control procedures and should include</p>
+<ol>
+<li>customer acceptance policy,</li>
+<li>customer identification, and</li>
+<li>on-going monitoring of high risk accounts</li>
+</ol>
+<p>Banks should not only establish the identity of their customers, but should also monitor account activity to determine those transactions that do not conform with the normal or expected transactions for that customer or type of account. KYC should be a core feature of banks’ risk management and control procedures, and be complemented by regular compliance reviews and internal audit. The intensity of KYC programmes beyond these essential elements should be tailored to the degree of risk.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                            <h3>Requirements Overview</h3>
+
+                                            <div id="tree"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['82%', ' ', '10%', ' ', ' ', ' ', ' ', ' ', '3%', ' ', '3%', ' ', '3%', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 32}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 4}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 1}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_success.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">32</td>
+                                                <td class="automated-stats">82%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_pending.html"><i
+                                                                                class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending</a>
+                                                                    </td>
+                                                <td class="automated-stats">4</td>
+                                                <td class="automated-stats">10%</td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                    <td colspan="3"><a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_broken.html"><i
+                                                                            class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_failure.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">3%</td>
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_error.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">3%</td>
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="context_theme_cl_customer_due_diligence_sl_customer_due_diligence_result_compromised.html"><i
+                                                                                class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">3%</td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">39</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-clipboard-check"></i> Functional Coverage</h3>
+
+
+
+<h4 class="requireent-type-heading">Features</h4>
+
+<table class="scenario-result table" id="req-results-table">
+    <thead>
+        <tr>
+            <th class="requirement-name-column" width="60%">Feature</th>
+            <th>ID</th>
+            <th>Automated Tests</th>
+                <th>Manual Tests</th>
+            <th>Results</th>
+            <th>Coverage</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr>
+
+
+            <td> 
+                <a href="feature_customer_due_diligence_sl_customer_acceptance_policy.html">Customer Acceptance Policies</a></span>
+            </td>
+            <td> 
+                
+            </td>
+            <td>33</td>
+            <td>0</td>
+            <td>
+                <span class="status_icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
+                <span style="display:none">4</span>
+            </td>
+
+            <td width="165px" style="padding:0px;">
+
+
+<table>
+    <tr>
+        <td width="40px" style="padding-top:4px;">
+            <div class="small" style="text-align:right;">84.8%</div>
+        </td>
+        <td style="min-width:12.5em;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar"
+                     style="width: 84.8%; background-color:#30cb23;"
+                     aria-valuenow="28"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 9.1%; background-color:#A2C4EC;"
+                     aria-valuenow="3"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:darkgrey;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#EEE098;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 3%; background-color:#f8001f;"
+                     aria-valuenow="1"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 3%; background-color:darkorange;"
+                     aria-valuenow="1"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:fuchsia;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="33"
+                     title="  - Total tests: 33
+  - Passing tests: 28 (84.8%)
+  - Failing tests: 1 (3%)
+  - Tests with errors: 1 (3%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 3 (9.1%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+
+            <td> 
+                <a href="feature_customer_due_diligence_sl_customer_identification.html">Customer Identification</a></span>
+            </td>
+            <td> 
+                
+            </td>
+            <td>2</td>
+            <td>0</td>
+            <td>
+                <span class="status_icon"><i class='fa fa-chain-broken compromised-icon ' title='COMPROMISED'></i></span>
+                <span style="display:none">5</span>
+            </td>
+
+            <td width="165px" style="padding:0px;">
+
+
+<table>
+    <tr>
+        <td width="40px" style="padding-top:4px;">
+            <div class="small" style="text-align:right;">50%</div>
+        </td>
+        <td style="min-width:12.5em;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar"
+                     style="width: 50%; background-color:#30cb23;"
+                     aria-valuenow="1"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#A2C4EC;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:darkgrey;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#EEE098;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#f8001f;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:darkorange;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 50%; background-color:fuchsia;"
+                     aria-valuenow="1"
+                     aria-valuemin="0"
+                     aria-valuemax="2"
+                     title="  - Total tests: 2
+  - Passing tests: 1 (50%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 1 (50%)
+  - Pending tests: 0 (0%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+
+            <td> 
+                <a href="feature_customer_due_diligence_sl_ongoing_monitoring.html">Ongoing Monitoring of accounts and transactions</a></span>
+            </td>
+            <td> 
+                
+            </td>
+            <td>4</td>
+            <td>0</td>
+            <td>
+                <span class="status_icon"><i class='far fa-stop-circle pending-icon ' title='PENDING'></i></span>
+                <span style="display:none">2</span>
+            </td>
+
+            <td width="165px" style="padding:0px;">
+
+
+<table>
+    <tr>
+        <td width="40px" style="padding-top:4px;">
+            <div class="small" style="text-align:right;">75%</div>
+        </td>
+        <td style="min-width:12.5em;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar"
+                     style="width: 75%; background-color:#30cb23;"
+                     aria-valuenow="3"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 25%; background-color:#A2C4EC;"
+                     aria-valuenow="1"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:darkgrey;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#EEE098;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:#f8001f;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:darkorange;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+                <div class="progress-bar" role="progressbar"
+                     style="width: 0%; background-color:fuchsia;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="4"
+                     title="  - Total tests: 4
+  - Passing tests: 3 (75%)
+  - Failing tests: 0 (0%)
+  - Tests with errors: 0 (0%)
+  - Compromised tests 0 (0%)
+  - Pending tests: 1 (25%)
+  - Ignored or skipped tests: 0 (0%)">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>feature</th>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="business_activities_the_business_activity_risk_factor_for_an_industry.html">The business activity risk factor for an industry</a>
+                                                               (7 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>00:49:33</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result PENDING">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="business_activities_an_example_of_a_high_risk_business.html">An example of a high risk business</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                                style="display:none">PENDING</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result PENDING">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="business_activities_a_few_more_examples_of_a_high_risk_businesses.html">A few more examples of a high risk businesses</a>
+                                                               (2 examples)
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                                style="display:none">PENDING</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="business_activities_the_business_activity_risk_factor_for_an_established_business.html">The business activity risk factor for an established business</a>
+                                                               (3 examples)
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="business_activities_businesses_established_less_than_2_years_ago_are_considered_higher_risk.html">Businesses established less than 2 years ago are considered higher risk</a>
+                                                               (3 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="country_risk_ratings_each_country_has_a_risk_rating_based_on_anti_money_laundering_and_anti_corruption_considerations.html">Each country has a risk rating based on anti-money-laundering and anti-corruption considerations</a>
+                                                               (8 examples)
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="country_risk_ratings_countries_are_categorised_as_low__medium_and_high_risk_based_on_their_risk_rating.html">Countries are categorised as low, medium and high risk based on their risk rating</a>
+                                                               (3 examples)
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="country_risk_ratings_overall_customer_risk_is_based_on_country_of_origin_and_country_of_domicile.html">Overall customer risk is based on country of origin and country of domicile</a>
+                                                               (6 examples)
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_customer_identification_sl_identifying_a_new_customer.html">Identifying a new customer</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="identifying_a_new_customer_identifying_a_new_customer_living_in_the_uk.html">Identifying a new customer living in the UK</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result COMPROMISED">
+                                                    <td>
+                                                            <a href="feature_customer_identification_sl_identifying_a_new_customer.html">Identifying a new customer</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="identifying_a_new_customer_identifying_a_new_customer_not_living_in_the_uk.html">Identifying a new customer not living in the UK</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-chain-broken compromised-icon ' title='COMPROMISED'></i> <span
+                                                                style="display:none">COMPROMISED</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result PENDING">
+                                                    <td>
+                                                            <a href="feature_ongoing_monitoring_sl_monitoring_new_customers.html">Monitoring new customers</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="monitoring_new_customers_monitoring_a_new_low_risk_customer.html">Monitoring a new low risk customer</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                                style="display:none">PENDING</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="monitoring_suspicious_cash_transactions_large_cash_transactions.html">Large cash transactions</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="monitoring_suspicious_cash_transactions_many_small_cash_transactions.html">Many small cash transactions</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                    </td>
+                                                    <td>
+                                                            <a href="monitoring_suspicious_cash_transactions_many_small_cash_transactions_that_are_in_the_customer_s_normal_usage_patterns.html">Many small cash transactions that are in the customer's normal usage patterns</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>00:49:34</td>
+                                                    <td>00:00</td>
+                                                    <td>
+                                                            <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="far fa-file"></i> Evidence</h3>
+                                                <table id="evidence-table" class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Scenario</th>
+                                                        <th>Title</th>
+                                                        <th>Details</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                     <tr>
+                                                         <td>Large cash transactions</td>
+                                                         <td>Reported Transactions</td>
+                                                         <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_large_cash_transactions.html'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td>Many small cash transactions</td>
+                                                         <td>Reported Transactions</td>
+                                                         <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_many_small_cash_transactions.html'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td>Many small cash transactions that are in the customer's normal usage patterns</td>
+                                                         <td>Cash Deposit records</td>
+                                                         <td><a role='button' target='_blank' class='btn btn-success btn-sm' href='downloadable/downloadable-67922086-462d-4926-96bb-4f19d4fe5b4e-transactions.csv'><i class='fas fa-download'></i>&nbsp;Download Evidence</a></td>
+                                                     </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.5</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

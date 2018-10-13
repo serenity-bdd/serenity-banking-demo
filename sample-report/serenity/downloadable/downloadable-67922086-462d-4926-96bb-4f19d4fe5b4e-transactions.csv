@@ -1,0 +1,5 @@
+Transaction ID  Date	Type	Amount	AML Flagged	Reason
+101	01-05-2018	Cash Deposit	1000	Yes	Total Cash deposits in a 1 month period exceeded threshold
+102	03-05-2018	Cash Deposit	2000	Yes	Total Cash deposits in a 1 month period exceeded threshold
+103	07-05-2018	Cash Deposit	4000	Yes	Total Cash deposits in a 1 month period exceeded threshold
+104	12-05-2018	Cash Deposit	4000	Yes	Total
