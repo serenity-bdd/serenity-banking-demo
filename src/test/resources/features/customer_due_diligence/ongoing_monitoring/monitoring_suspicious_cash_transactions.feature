@@ -8,7 +8,7 @@ Feature: Monitoring suspicious cash transactions
   Cash transactions over $10000 should be reported
 
     Given Joe is a new customer with a standard business account
-    And Joe makes the following transactions:
+    When Joe makes the following transactions:
       | Transaction ID | Date       | Type         | Amount |
       | 101            | 01-05-2018 | Cash Deposit | 1000   |
       | 102            | 03-05-2018 | Cash Deposit | 12000  |
@@ -17,3 +17,39 @@ Feature: Monitoring suspicious cash transactions
       | Transaction ID | Date       | Type         | Amount | AML Flagged | Reason                          |
       | 102            | 03-05-2018 | Cash Deposit | 12000  | Yes         | Cash deposit exceeded threshold |
     And an account review request should be submitted
+
+
+  Scenario: Many small cash transactions
+
+  Cash transactions over $10000 should be reported even when they are made in many small deposits
+
+    Given Joe is a new customer with a standard business account
+    When Joe makes the following transactions:
+      | Transaction ID | Date       | Type         | Amount |
+      | 101            | 01-05-2018 | Cash Deposit | 1000   |
+      | 102            | 03-05-2018 | Cash Deposit | 2000   |
+      | 103            | 07-05-2018 | Cash Deposit | 4000   |
+      | 104            | 12-05-2018 | Cash Deposit | 4000   |
+    Then the reported trades should be as follows
+      | Transaction ID | Date       | Type         | Amount | AML Flagged | Reason                                                     |
+      | 101            | 01-05-2018 | Cash Deposit | 1000   | Yes         | Total Cash deposits in a 1 month period exceeded threshold |
+      | 102            | 03-05-2018 | Cash Deposit | 2000   | Yes         | Total Cash deposits in a 1 month period exceeded threshold |
+      | 103            | 07-05-2018 | Cash Deposit | 4000   | Yes         | Total Cash deposits in a 1 month period exceeded threshold |
+      | 104            | 12-05-2018 | Cash Deposit | 4000   | Yes         | Total Cash deposits in a 1 month period exceeded threshold |
+
+    And an account review request should be submitted
+
+
+  Scenario: Many small cash transactions that are in the customer's normal usage patterns
+
+  Cash transactions over $10000 should not be reported if they are in the customer's normal business
+
+    Given Joe is an existing customer with a standard business account
+    And Joe's average monthly cash deposits are $15000
+    When Joe makes the following transactions:
+      | Transaction ID | Date       | Type         | Amount |
+      | 101            | 01-05-2018 | Cash Deposit | 1000   |
+      | 102            | 03-05-2018 | Cash Deposit | 2000   |
+      | 103            | 07-05-2018 | Cash Deposit | 4000   |
+      | 104            | 12-05-2018 | Cash Deposit | 4000   |
+    Then no trades should be reported

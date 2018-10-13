@@ -239,8 +239,8 @@ public class StepDefinitions {
     public void identifyEstablished() {}
 
 
-    @Given("Joe is a new customer with a standard business account")
-    public void newBusiness() {}
+    @Given("Joe is (a new|an existing) customer with a standard business account")
+    public void businessAccount(String newOrExisting) {}
 
     @When("Joe makes the following transactions:")
     public void transactions(List<Map<String,String>> transactions ){}
@@ -248,7 +248,14 @@ public class StepDefinitions {
     @Then("the reported trades should be as follows")
     public void recordedTransactions(List<Map<String,String>> transactions ){}
 
+    @Then("Joe's average monthly cash deposits are \\$(.*)")
+    public void averageCashTransactions(int average) {}
+
+
     @Then("an account review request should be submitted")
     public void submitReviewRequest() {}
+
+    @Then("no trades should be reported")
+    public void noTradesRecorded() {}
 
 }
