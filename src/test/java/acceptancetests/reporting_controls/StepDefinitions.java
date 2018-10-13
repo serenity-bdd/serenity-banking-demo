@@ -12,8 +12,11 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriverException;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
 
@@ -93,7 +96,7 @@ public class StepDefinitions {
 
     @When("^the transaction is rejected$")
     public void the_transaction_is_rejected() {
-        Assertions.assertThat(true).isFalse();
+        assertThat(true).isFalse();
     }
 
     @When("^the transaction is discarded")
@@ -240,22 +243,41 @@ public class StepDefinitions {
 
 
     @Given("Joe is (a new|an existing) customer with a standard business account")
-    public void businessAccount(String newOrExisting) {}
+    public void businessAccount(String newOrExisting) {
+        String status = newOrExisting;
+    }
 
     @When("Joe makes the following transactions:")
-    public void transactions(List<Map<String,String>> transactions ){}
+    public void transactions(List<Map<String,String>> transactions ){
+        assertThat(transactions).isNotEmpty();
+    }
 
-    @Then("the reported trades should be as follows")
-    public void recordedTransactions(List<Map<String,String>> transactions ){}
+    @Then("the reported transactions should be as follows")
+    public void recordedTransactions(List<Map<String,String>> transactions ) throws IOException {
+        assertThat(transactions).isNotEmpty();
+        Serenity.recordReportData()
+                .withTitle("Reported Transactions")
+                .asEvidence()
+                .fromFile(Paths.get("src/test/resources/data/transactions.csv"));
+    }
 
     @Then("Joe's average monthly cash deposits are \\$(.*)")
-    public void averageCashTransactions(int average) {}
+    public void averageCashTransactions(int average) throws IOException {
+        int averageDeposits = average;
+        Serenity.recordReportData()
+                .withTitle("Cash Deposit records")
+                .downloadable()
+                .asEvidence()
+                .fromFile(Paths.get("src/test/resources/data/transactions.csv"));
+    }
 
 
     @Then("an account review request should be submitted")
-    public void submitReviewRequest() {}
+    public void submitReviewRequest() {
 
-    @Then("no trades should be reported")
+    }
+
+    @Then("no transactions should be reported")
     public void noTradesRecorded() {}
 
 }
