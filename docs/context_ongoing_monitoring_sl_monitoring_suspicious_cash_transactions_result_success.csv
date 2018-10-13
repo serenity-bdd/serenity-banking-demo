@@ -1,4 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Monitoring suspicious cash transactions","Large cash transactions","SUCCESS","2018-10-14T00:49:34.886+05:30[Asia/Kolkata]","0.0","0.07"
-"Monitoring suspicious cash transactions","Many small cash transactions","SUCCESS","2018-10-14T00:49:34.962+05:30[Asia/Kolkata]","0.0","0.01"
-"Monitoring suspicious cash transactions","Many small cash transactions that are in the customer's normal usage patterns","SUCCESS","2018-10-14T00:49:34.973+05:30[Asia/Kolkata]","0.0","0.01"
+"Monitoring suspicious cash transactions","Large cash transactions","SUCCESS","2018-10-14T01:32:33.751+05:30[Asia/Kolkata]","0.0","0.25"
+"Monitoring suspicious cash transactions","Many small cash transactions","SUCCESS","2018-10-14T01:32:34.009+05:30[Asia/Kolkata]","0.0","0.02"
+"Monitoring suspicious cash transactions","Many small cash transactions that are in the customer's normal usage patterns","SUCCESS","2018-10-14T01:32:34.028+05:30[Asia/Kolkata]","0.0","0.03"
