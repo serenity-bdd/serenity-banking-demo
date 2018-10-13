@@ -1,7 +1,6 @@
 package acceptancetests.reporting_controls;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,10 +11,9 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriverException;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 
 public class StepDefinitions {
 
@@ -45,17 +43,26 @@ public class StepDefinitions {
     public void a_trade_has_a_counterparty_domiciled_in_US() {
     }
 
-
-    @When("^a guarantor domiciled in $")
-    public void a_guarantor_domiciled_in() {
+    @When("^a trade has a counterparty domiciled in Non-US$")
+    public void a_trade_has_a_counterparty_domiciled_in_Non_US() {
     }
 
-    @Then("^the trade CFTC eligibility is Yes$")
-    public void the_trade_CFTC_eligibility_is_Yes() {
+
+    @When("^a guarantor domiciled in (.*)$")
+    public void a_guarantor_domiciled_in(String domicile) {
     }
 
-    @Then("^the egilibility reason should be Counterparty is a US resident$")
-    public void the_egilibility_reason_should_be_Counterparty_is_a_US_resident() {
+    @Then("^the trade CFTC eligibility is (.*)")
+    public void the_trade_CFTC_eligibility_is(String eligibility) {
+    }
+
+    static int shouldFailCounter = 1;
+
+    @Then("^the eligibility reason should be (.*)$")
+    public void the_egilibility_reason_should_be(String reason) {
+        if (shouldFailCounter++ % 2 == 0) {
+            throw new AssertionError("Bugger!");
+        }
     }
 
     @Given("^the following transation is reportable$")
@@ -106,10 +113,6 @@ public class StepDefinitions {
     public void aTradeHasACounterpartyDomiciledInPuertoRico() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new ElementNotVisibleException("Oh crap!",new WebDriverException("Oh bugger!"));
-    }
-
-    @And("^a guarantor domiciled in Porto Rico$")
-    public void aGuarantorDomiciledInPortoRico() throws Throwable {
     }
 
     @Then("^the trade is not CFTC eligibile$")
@@ -234,4 +237,18 @@ public class StepDefinitions {
 
     @Then("his identify should be established")
     public void identifyEstablished() {}
+
+
+    @Given("Joe is a new customer with a standard business account")
+    public void newBusiness() {}
+
+    @When("Joe makes the following transactions:")
+    public void transactions(List<Map<String,String>> transactions ){}
+
+    @Then("the reported trades should be as follows")
+    public void recordedTransactions(List<Map<String,String>> transactions ){}
+
+    @Then("an account review request should be submitted")
+    public void submitReviewRequest() {}
+
 }
