@@ -164,8 +164,7 @@
             <span class="breadcrumbs">
             <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
 
-                > <a href="theme_customer_due_diligence.html">Customer Due Diligence</a>
-                > <a href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">Customer Acceptance Policy</a>
+                > <a href="capability_customer_acceptance_policy.html">Customer Acceptance Policy</a>
 
 
                 > <span class="truncate-40">Country Risk Ratings</span>
@@ -187,13 +186,13 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
         <li >
-            <a href="requirement_type_theme.html"><i class="fa fa-comments-o"></i> Themes</a>
+            <a href="requirement_type_capability.html"><i class="fa fa-comments-o"></i> Capabilities</a>
         </li>
         <li class="active">
             <a href="#"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 00:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 21:36</span>
     <br style="clear:left"/>
 </div>
 
@@ -218,8 +217,8 @@
                                                     <span class="badge tag-badge" style="background:default;">
                                                         <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
                                                                                           style="background:default;"
-                                                                                          href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">Customer Acceptance Policy
-                                                        (capability)</a>
+                                                                                          href="know_your_customer_rules_country_risk.html">Country Risk
+                                                        (Know_Your_Customer_Rules)</a>
                                                     </span>
                                                 </p>
                                         </span>
@@ -376,19 +375,20 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                             <p>When his risk coefficient is calculated</p>
                                                             <p>Then his country risk factor should be {Risk Factor}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Country</th><th>Risk Factor</th></tr>
+<tr><th>Country</th><th>Risk Factor</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>Iran</td><td>8.6</td></tr>
-<tr><td>Afghanistan</td><td>8.38</td></tr>
-<tr><td>Haiti</td><td>7.5</td></tr>
-<tr><td>Nicaragua</td><td>6.64</td></tr>
-<tr><td>China</td><td>6.53</td></tr>
-<tr><td>United Kingdom</td><td>4.81</td></tr>
-<tr><td>Estonia</td><td>3.83</td></tr>
-<tr><td>Finland</td><td>3.04</td></tr>
+<tr><td>Iran</td><td>8.6</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Afghanistan</td><td>8.38</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Haiti</td><td>7.5</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Nicaragua</td><td>6.64</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>China</td><td>6.53</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>United Kingdom</td><td>4.81</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Estonia</td><td>3.83</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Finland</td><td>3.04</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -414,14 +414,15 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                             <p>When the country has a risk factor that is {Risk Factor}, such as {Sample Country}</p>
                                                             <p>Then the risk rating should be {Risk Rating}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Risk Factor</th><th>Risk Rating</th><th>Sample Country</th></tr>
+<tr><th>Risk Factor</th><th>Risk Rating</th><th>Sample Country</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>7 or above</td><td>High</td><td>Iran</td></tr>
-<tr><td>5 to 7</td><td>Medium</td><td>Nicaragua</td></tr>
-<tr><td>Below 5</td><td>Low</td><td>Estonia</td></tr>
+<tr><td>7 or above</td><td>High</td><td>Iran</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>5 to 7</td><td>Medium</td><td>Nicaragua</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Below 5</td><td>Low</td><td>Estonia</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -449,17 +450,18 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                             <p>When his overall country risk is calculated</p>
                                                             <p>Then the overall risk category should be {risk}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>domicile</th><th>origin</th><th>risk</th></tr>
+<tr><th>domicile</th><th>origin</th><th>risk</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>high</td><td>Any</td><td>high</td></tr>
-<tr><td>Any</td><td>high</td><td>high</td></tr>
-<tr><td>medium</td><td>medium</td><td>medium</td></tr>
-<tr><td>medium</td><td>low</td><td>medium</td></tr>
-<tr><td>low</td><td>medium</td><td>low</td></tr>
-<tr><td>low</td><td>low</td><td>low</td></tr>
+<tr><td>high</td><td>Any</td><td>high</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Any</td><td>high</td><td>high</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>medium</td><td>medium</td><td>medium</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>medium</td><td>low</td><td>medium</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>low</td><td>medium</td><td>low</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>low</td><td>low</td><td>low</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -610,7 +612,7 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                                (8 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
@@ -623,7 +625,7 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                                (3 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
@@ -636,7 +638,7 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
                                                                (6 examples)
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
@@ -669,7 +671,7 @@ Each country is given a risk coefficient between 0 (low risk) and 10 (high risk)
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
-                        <span class="version">Serenity BDD version 2.0.5</span>
+                        <span class="version">Serenity BDD version 2.0.7</span>
                     </div>
                 </div>
             </div>

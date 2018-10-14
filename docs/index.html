@@ -86,15 +86,65 @@
             "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
         });
 
-        $('#evidence-table').DataTable(
-                    {
+        $('#evidence-table').DataTable({
                         searching: false,
-                        paging: false,
+                        paging:false,
                         info: false
-                    }
-        );
-    })
-    ;
+        });
+
+        $(".feature-coverage-table").DataTable({
+            searching: false,
+            paging: false,
+            info: false
+        });
+
+        $(".feature-coverage-table-with-pagination").DataTable({
+            order: [[0, "asc",]],
+            pageLength: 10,
+            language: {
+                searchPlaceholder: "Filter",
+                search: ""
+            },<script class="code" type="text/javascript">$(document).ready(function () {
+
+
+            $('.scenario-result-table').DataTable({
+
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            // Results table
+            $('#test-results-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            });
+
+            $('#evidence-table').DataTable({
+                        searching: false,
+                        paging:false,
+                        info: false
+            });
+
+            $(".feature-coverage-table").DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table-with-pagination").DataTable({
+                order: [[0, "asc",]],
+                pageLength: 10,
+                language: {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            });
+        });
     </script>
 </head>
 
@@ -129,13 +179,13 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
         <li >
-            <a href="requirement_type_theme.html"><i class="fa fa-comments-o"></i> Themes</a>
+            <a href="requirement_type_capability.html"><i class="fa fa-comments-o"></i> Capabilities</a>
         </li>
         <li >
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 00:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 21:57</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -150,9 +200,11 @@
                         <td width="375px" valign="top">
                             <div class="test-count-summary">
                                 <div class="test-count-title">
-                                44 test scenarios (including 32 rows of test data)
+                                39 test scenarios 
+                                    (including 32 rows of test data)
                                  |
-                                    <a href="results.csv" title="Download CSV"> <i class="fa fa-download" title="Download CSV"></i></a>
+                                    <a href="results.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                    title="Download CSV"></i></a>
 
 
                                 </div>
@@ -176,53 +228,54 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <div style="width:300px;" class="chart-container automated-and-manual-results">
-                                                            <div class="ct-chart ct-square"></div>
-                                                        </div>
-                                                        <script>
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
 
-                                                            var labels = ['82%', ' ', '11%', ' ', ' ', ' ', ' ', ' ', '2%', ' ', '2%', ' ', '2%', ' '];
-                                                            // Our series array that contains series objects or in this case series data arrays
+                                                                var labels = ['82%', ' ', '10%', ' ', ' ', ' ', ' ', ' ', '3%', ' ', '3%', ' ', '3%', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
 
-                                                            var series = [{meta: 'Passing tests (automated)', value: 36}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 5}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 1}, {meta: 'Compromised tests (manual)', value: 0}];
+                                                                var series = [{meta: 'Passing tests (automated)', value: 32}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 4}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 1}, {meta: 'Compromised tests (manual)', value: 0}];
 
-                                                            // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
-                                                            // as you saw in the previous example
-                                                            var options = {
-                                                                width: 350,
-                                                                height: 300
-                                                            };
-
-
-                                                            new Chartist.Pie('.ct-chart', {
-                                                                series: series,
-                                                                labels: labels
-                                                            }, {
-                                                                plugins: [ Chartist.plugins.tooltip() ],
-                                                                donut: true,
-                                                                donutWidth: 60,
-                                                                donutSolid: true,
-                                                                startAngle: 270,
-                                                                showLabel: true
-                                                            }, options);
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
 
 
-                                                            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                                                                 new Chartist.Pie('.ct-chart', {
                                                                     series: series,
                                                                     labels: labels
                                                                 }, {
-                                                                    plugins: [ Chartist.plugins.tooltip() ],
+                                                                    plugins: [Chartist.plugins.tooltip()],
                                                                     donut: true,
                                                                     donutWidth: 60,
                                                                     donutSolid: true,
                                                                     startAngle: 270,
                                                                     showLabel: true
                                                                 }, options);
-                                                            });
 
 
-                                                        </script>
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
                                                     </div>
                                                     <div class="col-sm-8">
 
@@ -238,17 +291,19 @@
                                                             <tbody>
                                                             <tr>
                                                                     <td class="aggregate-result-count">
-                                                                        <a href="result_success.html"><i class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                        <a href="result_success.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
                                                                     </td>
-                                                                <td class="automated-stats">36</td>
+                                                                <td class="automated-stats">32</td>
                                                                 <td class="automated-stats">82%</td>
                                                             </tr>
                                                             <tr>
                                                                     <td class="aggregate-result-count">
-                                                                        <a href="result_pending.html"><i class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending</a>
+                                                                        <a href="result_pending.html"><i
+                                                                                class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending</a>
                                                                     </td>
-                                                                <td class="automated-stats">5</td>
-                                                                <td class="automated-stats">11%</td>
+                                                                <td class="automated-stats">4</td>
+                                                                <td class="automated-stats">10%</td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="aggregate-result-count"><i
@@ -265,30 +320,36 @@
                                                                 <td class="automated-stats"> </td>
                                                             </tr>
                                                             <tr>
-                                                                    <td colspan="3"><a href="result_broken.html"><i class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a></td>
+                                                                    <td colspan="3"><a
+                                                                            href="result_broken.html"><i
+                                                                            class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
                                                             </tr>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="result_failure.html"><i class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                        <a href="result_failure.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
-                                                                <td class="automated-stats">2%</td>
+                                                                <td class="automated-stats">3%</td>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="result_error.html"><i class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                        <a href="result_error.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
-                                                                <td class="automated-stats">2%</td>
+                                                                <td class="automated-stats">3%</td>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="result_compromised.html"><i class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised</a>
+                                                                        <a href="result_compromised.html"><i
+                                                                                class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
-                                                                <td class="automated-stats">2%</td>
+                                                                <td class="automated-stats">3%</td>
                                                             </tr>
                                                             <tr class="summary-stats">
                                                                 <td class="aggregate-result-count">Total</td>
-                                                                <td class="automated-stats">44</td>
+                                                                <td class="automated-stats">39</td>
                                                                 <td class="automated-stats"></td>
                                                             </tr>
                                                             </tbody>
@@ -297,6 +358,153 @@
                                                 </div>
 
 
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3>Functional Coverage Overview</h3>
+
+                                                            <table class="table feature-coverage-table"
+                                                                   id="Know_Your_Customer_Rules">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Know your customer rules</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">Scenarios</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">% Pass</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">Result</th>
+                                                                    <th>Coverage</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                                <a href="know_your_customer_rules_business_activities.html">Business  activities</a>
+                                                                        </td>
+                                                                        <td>16</td>
+                                                                        <td>69%</td>
+                                                                        <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 69%; background-color: #30cb23"
+                                                                                         aria-valuenow="11"
+                                                                                         title="69% success"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 19%; background-color: #A2C4EC"
+                                                                                         aria-valuenow="3"
+                                                                                         title="19% pending"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 6%; background-color: #f8001f"
+                                                                                         aria-valuenow="1"
+                                                                                         title="6% failure"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 6%; background-color: darkorange"
+                                                                                         aria-valuenow="1"
+                                                                                         title="6% error"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                <a href="know_your_customer_rules_country_risk.html">Country  risk</a>
+                                                                        </td>
+                                                                        <td>17</td>
+                                                                        <td>100%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 100%; background-color: #30cb23"
+                                                                                         aria-valuenow="17"
+                                                                                         title="100% success"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Enhanced  due  diligence
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Standard  due  diligence
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Politically  exposed  persons
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Customer  risk
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Non  face  to  face  customers
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
                                                     <div class="col-sm-6">
@@ -312,7 +520,9 @@
                                                                 <td class="error-color top-list-title">
                                                                     <a href="errortype_java.lang.assertionerror.html"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> Assertion error</a>
                                                                 </td>
-                                                                <td><span class="badge failure-badge">1</span></td>
+                                                                <td><span
+                                                                        class="badge failure-badge">1</span>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -322,8 +532,12 @@
                                                         <table class="table">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="failure-color top-list-title"><a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a></td>
-                                                                    <td><span class="badge failure-badge">6%</span></td>
+                                                                    <td class="failure-color top-list-title"><a
+                                                                            href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                                    </td>
+                                                                    <td><span
+                                                                            class="badge failure-badge">6%</span>
+                                                                    </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -335,43 +549,17 @@
                                                         <h3>Tags</h3>
 
                                                         <span>
-                                                            <a href="tag_acquisition.html">
-                                                                <span class="badge" style="background-color:#1D9918; margin:1em;padding:4px;"><i class="fa fa-tag"></i> acquisition&nbsp;&nbsp;&nbsp;3</span>
+                                                            <a href="know_your_customer_rules_business_activities.html">
+                                                                <span class="badge"
+                                                                      style="background-color:darkorange; margin:1em;padding:4px;"><i
+                                                                        class="fa fa-tag"></i> Business_Activities (Know_Your_Customer_Rules)&nbsp;&nbsp;&nbsp;16</span>
                                                             </a>
                                                         </span>
                                                         <span>
-                                                            <a href="tag_ctfc.html">
-                                                                <span class="badge" style="background-color:#1D9918; margin:1em;padding:4px;"><i class="fa fa-tag"></i> ctfc&nbsp;&nbsp;&nbsp;1</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="story_aquisition_sl_trade_acquisition.html">
-                                                                <span class="badge" style="background-color:#1D9918; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Aquisition/Trade acquisition (story)&nbsp;&nbsp;&nbsp;3</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="tag_volcker.html">
-                                                                <span class="badge" style="background-color:#1D9918; margin:1em;padding:4px;"><i class="fa fa-tag"></i> volcker&nbsp;&nbsp;&nbsp;1</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="story_aquisition_sl_positions_acquisition.html">
-                                                                <span class="badge" style="background-color:#6884A6; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Aquisition/Positions acquisition (story)&nbsp;&nbsp;&nbsp;2</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">
-                                                                <span class="badge" style="background-color:darkorange; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Customer due diligence/Customer acceptance policy (capability)&nbsp;&nbsp;&nbsp;33</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="capability_customer_due_diligence_sl_customer_identification.html">
-                                                                <span class="badge" style="background-color:fuchsia; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Customer due diligence/Customer identification (capability)&nbsp;&nbsp;&nbsp;2</span>
-                                                            </a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="capability_customer_due_diligence_sl_ongoing_monitoring.html">
-                                                                <span class="badge" style="background-color:#6884A6; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Customer due diligence/Ongoing monitoring (capability)&nbsp;&nbsp;&nbsp;4</span>
+                                                            <a href="know_your_customer_rules_country_risk.html">
+                                                                <span class="badge"
+                                                                      style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                        class="fa fa-tag"></i> Country_Risk (Know_Your_Customer_Rules)&nbsp;&nbsp;&nbsp;17</span>
                                                             </a>
                                                         </span>
                                                     </div>
@@ -396,240 +584,194 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr class="scenario-result SUCCESS">
-                                                    <td>
-                                                            <a href="story_aquisition_sl_trade_acquisition.html">Trade acquisition</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="acceptancetests.reporting_controls.aquisition.tradeacquisition_cftc_acquisition.html">Cftc acquisition</a>
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>00:49:30</td>
-                                                    <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
-                                                </tr>
-                                                <tr class="scenario-result SUCCESS">
-                                                    <td>
-                                                            <a href="story_aquisition_sl_trade_acquisition.html">Trade acquisition</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="acceptancetests.reporting_controls.aquisition.tradeacquisition_generic_acquisition.html">Generic acquisition</a>
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>00:49:31</td>
-                                                    <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
-                                                </tr>
-                                                <tr class="scenario-result SUCCESS">
-                                                    <td>
-                                                            <a href="story_aquisition_sl_trade_acquisition.html">Trade acquisition</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="acceptancetests.reporting_controls.aquisition.tradeacquisition_volcker_acquisition.html">Volcker acquisition</a>
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>00:49:31</td>
-                                                    <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
-                                                </tr>
-                                                <tr class="scenario-result PENDING">
-                                                    <td>
-                                                            <a href="story_aquisition_sl_positions_acquisition.html">Positions acquisition</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="acceptancetests.reporting_controls.aquisition.positionsacquisition_handling_corrupt_input_data.html">Handling corrupt input data</a>
-                                                    </td>
-                                                    <td>0</td>
-                                                    <td>00:49:33</td>
-                                                    <td>00:00</td>
-                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span style="display:none">PENDING</span></td>
-                                                </tr>
-                                                <tr class="scenario-result SUCCESS">
-                                                    <td>
-                                                            <a href="story_aquisition_sl_positions_acquisition.html">Positions acquisition</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="acceptancetests.reporting_controls.aquisition.positionsacquisition_basic_acquisition.html">Basic acquisition</a>
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>00:49:33</td>
-                                                    <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
-                                                </tr>
                                                 <tr class="scenario-result ERROR">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_the_business_activity_risk_factor_for_an_industry.html">The business activity risk factor for an industry</a>
                                                                    (7 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:33</td>
+                                                    <td>21:36:06</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span style="display:none">ERROR</span></td>
+                                                    <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span
+                                                            style="display:none">ERROR</span></td>
                                                 </tr>
                                                 <tr class="scenario-result PENDING">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_an_example_of_a_high_risk_business.html">An example of a high risk business</a>
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span style="display:none">PENDING</span></td>
+                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                            style="display:none">PENDING</span></td>
                                                 </tr>
                                                 <tr class="scenario-result PENDING">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_a_few_more_examples_of_a_high_risk_businesses.html">A few more examples of a high risk businesses</a>
                                                                    (2 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span style="display:none">PENDING</span></td>
+                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                            style="display:none">PENDING</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_the_business_activity_risk_factor_for_an_established_business.html">The business activity risk factor for an established business</a>
                                                                    (3 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_businesses_established_less_than_2_years_ago_are_considered_higher_risk.html">Businesses established less than 2 years ago are considered higher risk</a>
                                                                    (3 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                            <a href="feature_country_risk_ratings.html">Country risk ratings</a>
                                                     </td>
                                                     <td>
                                                         <a href="country_risk_ratings_each_country_has_a_risk_rating_based_on_anti_money_laundering_and_anti_corruption_considerations.html">Each country has a risk rating based on anti-money-laundering and anti-corruption considerations</a>
                                                                    (8 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                            <a href="feature_country_risk_ratings.html">Country risk ratings</a>
                                                     </td>
                                                     <td>
                                                         <a href="country_risk_ratings_countries_are_categorised_as_low__medium_and_high_risk_based_on_their_risk_rating.html">Countries are categorised as low, medium and high risk based on their risk rating</a>
                                                                    (3 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_country_risk_ratings.html">Country risk ratings</a>
+                                                            <a href="feature_country_risk_ratings.html">Country risk ratings</a>
                                                     </td>
                                                     <td>
                                                         <a href="country_risk_ratings_overall_customer_risk_is_based_on_country_of_origin_and_country_of_domicile.html">Overall customer risk is based on country of origin and country of domicile</a>
                                                                    (6 examples)
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_customer_identification_sl_identifying_a_new_customer.html">Identifying a new customer</a>
+                                                            <a href="feature_identifying_a_new_customer.html">Identifying a new customer</a>
                                                     </td>
                                                     <td>
                                                         <a href="identifying_a_new_customer_identifying_a_new_customer_living_in_the_uk.html">Identifying a new customer living in the UK</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result COMPROMISED">
                                                     <td>
-                                                            <a href="feature_customer_identification_sl_identifying_a_new_customer.html">Identifying a new customer</a>
+                                                            <a href="feature_identifying_a_new_customer.html">Identifying a new customer</a>
                                                     </td>
                                                     <td>
                                                         <a href="identifying_a_new_customer_identifying_a_new_customer_not_living_in_the_uk.html">Identifying a new customer not living in the UK</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-chain-broken compromised-icon ' title='COMPROMISED'></i> <span style="display:none">COMPROMISED</span></td>
+                                                    <td><i class='fa fa-chain-broken compromised-icon ' title='COMPROMISED'></i> <span
+                                                            style="display:none">COMPROMISED</span></td>
                                                 </tr>
                                                 <tr class="scenario-result PENDING">
                                                     <td>
-                                                            <a href="feature_ongoing_monitoring_sl_monitoring_new_customers.html">Monitoring new customers</a>
+                                                            <a href="feature_monitoring_new_customers.html">Monitoring new customers</a>
                                                     </td>
                                                     <td>
                                                         <a href="monitoring_new_customers_monitoring_a_new_low_risk_customer.html">Monitoring a new low risk customer</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span style="display:none">PENDING</span></td>
+                                                    <td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
+                                                            style="display:none">PENDING</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                            <a href="feature_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
                                                     </td>
                                                     <td>
                                                         <a href="monitoring_suspicious_cash_transactions_large_cash_transactions.html">Large cash transactions</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                            <a href="feature_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
                                                     </td>
                                                     <td>
                                                         <a href="monitoring_suspicious_cash_transactions_many_small_cash_transactions.html">Many small cash transactions</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 <tr class="scenario-result SUCCESS">
                                                     <td>
-                                                            <a href="feature_ongoing_monitoring_sl_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
+                                                            <a href="feature_monitoring_suspicious_cash_transactions.html">Monitoring suspicious cash transactions</a>
                                                     </td>
                                                     <td>
                                                         <a href="monitoring_suspicious_cash_transactions_many_small_cash_transactions_that_are_in_the_customer_s_normal_usage_patterns.html">Many small cash transactions that are in the customer's normal usage patterns</a>
                                                     </td>
                                                     <td>4</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span style="display:none">SUCCESS</span></td>
+                                                    <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                            style="display:none">SUCCESS</span></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -663,17 +805,17 @@
                                                                  <tr>
                                                                      <td>Large cash transactions</td>
                                                                      <td>Reported Transactions</td>
-                                                                     <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_large_cash_transactions.html'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
+                                                                     <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_large_cash_transactions.html#report-data-ce6c3f7c-ac8b-4341-8d1d-3bfb8efa1fca'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
                                                                  </tr>
                                                                  <tr>
                                                                      <td>Many small cash transactions</td>
                                                                      <td>Reported Transactions</td>
-                                                                     <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_many_small_cash_transactions.html'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
+                                                                     <td><a role='button' class='btn btn-success btn-sm' href='monitoring_suspicious_cash_transactions_many_small_cash_transactions.html#report-data-4dc1ac33-7a99-4d30-9348-7b67669fb93b'><i class="fas fa-external-link-alt"></i>&nbsp;Details</a></td>
                                                                  </tr>
                                                                  <tr>
                                                                      <td>Many small cash transactions that are in the customer's normal usage patterns</td>
                                                                      <td>Cash Deposit records</td>
-                                                                     <td><a role='button' target='_blank' class='btn btn-success btn-sm' href='downloadable/downloadable-67922086-462d-4926-96bb-4f19d4fe5b4e-transactions.csv'><i class='fas fa-download'></i>&nbsp;Download Evidence</a></td>
+                                                                     <td><a role='button' target='_blank' class='btn btn-success btn-sm' href='downloadable/downloadable-1f1a9d71-4896-4865-bb04-127c9091c737-transactions.csv'><i class='fas fa-download'></i>&nbsp;Download Evidence</a></td>
                                                                  </tr>
                                                                 </tbody>
                                                             </table>
@@ -695,7 +837,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <span class="version">Serenity BDD version 2.0.5</span>
+            <span class="version">Serenity BDD version 2.0.7</span>
         </div>
     </div>
 </div>

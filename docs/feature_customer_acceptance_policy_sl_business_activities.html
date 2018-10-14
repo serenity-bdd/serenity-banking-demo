@@ -164,8 +164,7 @@
             <span class="breadcrumbs">
             <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
 
-                > <a href="theme_customer_due_diligence.html">Customer Due Diligence</a>
-                > <a href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">Customer Acceptance Policy</a>
+                > <a href="capability_customer_acceptance_policy.html">Customer Acceptance Policy</a>
 
 
                 > <span class="truncate-40">Business Activities</span>
@@ -187,13 +186,13 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
         <li >
-            <a href="requirement_type_theme.html"><i class="fa fa-comments-o"></i> Themes</a>
+            <a href="requirement_type_capability.html"><i class="fa fa-comments-o"></i> Capabilities</a>
         </li>
         <li class="active">
             <a href="#"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 00:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 21:36</span>
     <br style="clear:left"/>
 </div>
 
@@ -218,8 +217,8 @@
                                                     <span class="badge tag-badge" style="background:default;">
                                                         <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
                                                                                           style="background:default;"
-                                                                                          href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">Customer Acceptance Policy
-                                                        (capability)</a>
+                                                                                          href="know_your_customer_rules_business_activities.html">Business Activities
+                                                        (Know_Your_Customer_Rules)</a>
                                                     </span>
                                                 </p>
                                         </span>
@@ -258,12 +257,12 @@
 <p>The Business Activity Risk factor for a customer is determined by the industry risk factor, how long the business has been in activity. A business with less than 2 years activity is considered high risk:</p>
 <div class='example-table example-table-in-summary'><table>
 <thead>
-<tr><th>Business Start Date</th><th>Application Date</th><th>Business Category</th><th>Risk Rating</th><th>Region</th><th>Additional Comments</th><th>ExtraWideColumn</th><th>NothingToSeeHere</th><th>MoveAlong</th><th>MoveAlong</th><th>Region</th><th>Additional Comments</th><th>ExtraWideColumn</th><th>NothingToSeeHere</th><th>MoveAlong</th><th>MoveAlong</th><th> </th></tr>
+<tr><th>Business Start Date</th><th>Application Date</th><th>Business Category</th><th>Risk Rating</th><th> </th></tr>
 </thead>
 <tbody>
-<tr><td>01-01-2016</td><td>31-12-2017</td><td>Software Development</td><td>Medium</td><td>APAC</td><td></td><td></td><td></td><td></td><td></td><td>APAC</td><td></td><td></td><td></td><td></td><td></td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
-<tr><td>01-01-2018</td><td>31-01-2018</td><td>Jewellery Store</td><td>High</td><td>EMEA</td><td></td><td></td><td></td><td></td><td></td><td>EMEA</td><td></td><td></td><td></td><td></td><td></td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
-<tr><td>01-01-2018</td><td>31-01-2018</td><td>Casino</td><td>Unacceptable</td><td>USA</td><td></td><td></td><td></td><td></td><td></td><td>USA</td><td></td><td></td><td></td><td></td><td></td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>01-01-2016</td><td>31-12-2017</td><td>Software Development</td><td>Medium</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>01-01-2018</td><td>31-01-2018</td><td>Jewellery Store</td><td>High</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>01-01-2018</td><td>31-01-2018</td><td>Casino</td><td>Unacceptable</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 <p><a href="business_activities_businesses_established_less_than_2_years_ago_are_considered_higher_risk.html"><i class="fa fa-info-circle"></i> More details</a>
@@ -396,18 +395,37 @@
                                                             <p>When a customer works in {Business Category}</p>
                                                             <p>Then their base business activity risk factor should be {Risk Factor}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples: High Risk</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Business Category</th><th>Risk Factor</th></tr>
+<tr><th>Business Category</th><th>Risk Factor</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>Casino</td><td>10</td></tr>
-<tr><td>Precious Metals Exchange</td><td>9</td></tr>
-<tr><td>Currency Exchange</td><td>9</td></tr>
-<tr><td>Jewellery Store</td><td>8</td></tr>
-<tr><td>Convenience Store</td><td>7</td></tr>
-<tr><td>Real Estate Broker</td><td>6</td></tr>
-<tr><td>Software Development</td><td>3</td></tr>
+<tr><td>Casino</td><td>10</td><td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></td></tr>
+<tr><td>Precious Metals Exchange</td><td>9</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Currency Exchange</td><td>9</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Jewellery Store</td><td>8</td><td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                            <p><p>Examples: Medium Risk</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Business Category</th><th>Risk Factor</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Convenience Store</td><td>7</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Real Estate Broker</td><td>6</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                            <p><p>Examples: Low Risk</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Business Category</th><th>Risk Factor</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Software Development</td><td>3</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -475,13 +493,14 @@
                                                             <p>When the business risk profile is assessed</p>
                                                             <p>Then the risk rating should be {Risk}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Name</th><th>Category</th><th>Risk</th></tr>
+<tr><th>Name</th><th>Category</th><th>Risk</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>Teds</td><td>Convenience Store</td><td>Medium</td></tr>
-<tr><td>Jills</td><td>Software Development</td><td>Low</td></tr>
+<tr><td>Teds</td><td>Convenience Store</td><td>Medium</td><td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i></td></tr>
+<tr><td>Jills</td><td>Software Development</td><td>Low</td><td><i class='far fa-stop-circle pending-icon ' title='PENDING'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -511,14 +530,15 @@
                                                             <p>And the business been operation for more than two years</p>
                                                             <p>Then their business activity risk rating should be {Risk Rating}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Risk Factor</th><th>Business Category</th><th>Risk Rating</th></tr>
+<tr><th>Risk Factor</th><th>Business Category</th><th>Risk Rating</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>7 or above</td><td>Casino</td><td>High</td></tr>
-<tr><td>5 to 7</td><td>Jewellery Store</td><td>Medium</td></tr>
-<tr><td>Under 5</td><td>Software Development</td><td>Low</td></tr>
+<tr><td>7 or above</td><td>Casino</td><td>High</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>5 to 7</td><td>Jewellery Store</td><td>Medium</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>Under 5</td><td>Software Development</td><td>Low</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -544,14 +564,15 @@
                                                             <p>When a business of type {Business Category} established on {Business Start Date} applies to open an account on {Application Date}</p>
                                                             <p>Then their business activity risk rating should be {Risk Rating}</p>
                                                         <div class="examples">
-                                                            <p><div class='example-table-in-scenario'><table>
+                                                            <p><p>Examples:</p>
+<div class='example-table-in-scenario'><table>
 <thead>
-<tr><th>Business Start Date</th><th>Application Date</th><th>Business Category</th><th>Risk Rating</th><th>Region</th><th>Additional Comments</th><th>ExtraWideColumn</th><th>NothingToSeeHere</th><th>MoveAlong</th><th>MoveAlong</th><th>Region</th><th>Additional Comments</th><th>ExtraWideColumn</th><th>NothingToSeeHere</th><th>MoveAlong</th><th>MoveAlong</th></tr>
+<tr><th>Business Start Date</th><th>Application Date</th><th>Business Category</th><th>Risk Rating</th><th></th></tr>
 </thead>
 <tbody>
-<tr><td>01-01-2016</td><td>31-12-2017</td><td>Software Development</td><td>Medium</td><td>APAC</td><td></td><td></td><td></td><td></td><td></td><td>APAC</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>01-01-2018</td><td>31-01-2018</td><td>Jewellery Store</td><td>High</td><td>EMEA</td><td></td><td></td><td></td><td></td><td></td><td>EMEA</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>01-01-2018</td><td>31-01-2018</td><td>Casino</td><td>Unacceptable</td><td>USA</td><td></td><td></td><td></td><td></td><td></td><td>USA</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>01-01-2016</td><td>31-12-2017</td><td>Software Development</td><td>Medium</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>01-01-2018</td><td>31-01-2018</td><td>Jewellery Store</td><td>High</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
+<tr><td>01-01-2018</td><td>31-01-2018</td><td>Casino</td><td>Unacceptable</td><td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td></tr>
 </tbody>
 </table></div>
 </p>
@@ -703,7 +724,7 @@
                                                                (7 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:33</td>
+                                                    <td>21:36:06</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span
@@ -715,7 +736,7 @@
                                                             <a href="business_activities_an_example_of_a_high_risk_business.html">An example of a high risk business</a>
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
@@ -728,7 +749,7 @@
                                                                (2 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='far fa-stop-circle pending-icon ' title='PENDING'></i> <span
@@ -741,7 +762,7 @@
                                                                (3 examples)
                                                     </td>
                                                     <td>3</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
@@ -754,7 +775,7 @@
                                                                (3 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:34</td>
+                                                    <td>21:36:09</td>
                                                     <td>00:00</td>
                                                     <td>
                                                             <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
@@ -787,7 +808,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
-                        <span class="version">Serenity BDD version 2.0.5</span>
+                        <span class="version">Serenity BDD version 2.0.7</span>
                     </div>
                 </div>
             </div>

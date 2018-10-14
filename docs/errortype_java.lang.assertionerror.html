@@ -86,15 +86,65 @@
             "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
         });
 
-        $('#evidence-table').DataTable(
-                    {
+        $('#evidence-table').DataTable({
                         searching: false,
-                        paging: false,
+                        paging:false,
                         info: false
-                    }
-        );
-    })
-    ;
+        });
+
+        $(".feature-coverage-table").DataTable({
+            searching: false,
+            paging: false,
+            info: false
+        });
+
+        $(".feature-coverage-table-with-pagination").DataTable({
+            order: [[0, "asc",]],
+            pageLength: 10,
+            language: {
+                searchPlaceholder: "Filter",
+                search: ""
+            },<script class="code" type="text/javascript">$(document).ready(function () {
+
+
+            $('.scenario-result-table').DataTable({
+
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            // Results table
+            $('#test-results-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            });
+
+            $('#evidence-table').DataTable({
+                        searching: false,
+                        paging:false,
+                        info: false
+            });
+
+            $(".feature-coverage-table").DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table-with-pagination").DataTable({
+                order: [[0, "asc",]],
+                pageLength: 10,
+                language: {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            });
+        });
     </script>
 </head>
 
@@ -132,13 +182,13 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
         <li >
-            <a href="requirement_type_theme.html"><i class="fa fa-comments-o"></i> Themes</a>
+            <a href="requirement_type_capability.html"><i class="fa fa-comments-o"></i> Capabilities</a>
         </li>
         <li >
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 00:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-10-2018 21:57</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -153,9 +203,11 @@
                         <td width="375px" valign="top">
                             <div class="test-count-summary">
                                 <div class="test-count-title">
-                                7 test scenarios (including 7 rows of test data)
+                                7 test scenarios 
+                                    (including 7 rows of test data)
                                  |
-                                    <a href="results.csv" title="Download CSV"> <i class="fa fa-download" title="Download CSV"></i></a>
+                                    <a href="results.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                    title="Download CSV"></i></a>
 
 
                                 </div>
@@ -179,53 +231,54 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <div style="width:300px;" class="chart-container automated-and-manual-results">
-                                                            <div class="ct-chart ct-square"></div>
-                                                        </div>
-                                                        <script>
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
 
-                                                            var labels = ['71%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '14%', ' ', '14%', ' ', ' ', ' '];
-                                                            // Our series array that contains series objects or in this case series data arrays
+                                                                var labels = ['71%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '14%', ' ', '14%', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
 
-                                                            var series = [{meta: 'Passing tests (automated)', value: 5}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+                                                                var series = [{meta: 'Passing tests (automated)', value: 5}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
 
-                                                            // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
-                                                            // as you saw in the previous example
-                                                            var options = {
-                                                                width: 350,
-                                                                height: 300
-                                                            };
-
-
-                                                            new Chartist.Pie('.ct-chart', {
-                                                                series: series,
-                                                                labels: labels
-                                                            }, {
-                                                                plugins: [ Chartist.plugins.tooltip() ],
-                                                                donut: true,
-                                                                donutWidth: 60,
-                                                                donutSolid: true,
-                                                                startAngle: 270,
-                                                                showLabel: true
-                                                            }, options);
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
 
 
-                                                            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                                                                 new Chartist.Pie('.ct-chart', {
                                                                     series: series,
                                                                     labels: labels
                                                                 }, {
-                                                                    plugins: [ Chartist.plugins.tooltip() ],
+                                                                    plugins: [Chartist.plugins.tooltip()],
                                                                     donut: true,
                                                                     donutWidth: 60,
                                                                     donutSolid: true,
                                                                     startAngle: 270,
                                                                     showLabel: true
                                                                 }, options);
-                                                            });
 
 
-                                                        </script>
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
                                                     </div>
                                                     <div class="col-sm-8">
 
@@ -241,7 +294,8 @@
                                                             <tbody>
                                                             <tr>
                                                                     <td class="aggregate-result-count">
-                                                                        <a href="result_success.html"><i class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                        <a href="result_success.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
                                                                     </td>
                                                                 <td class="automated-stats">5</td>
                                                                 <td class="automated-stats">71%</td>
@@ -268,23 +322,29 @@
                                                                 <td class="automated-stats"> </td>
                                                             </tr>
                                                             <tr>
-                                                                    <td colspan="3"><a href="result_broken.html"><i class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a></td>
+                                                                    <td colspan="3"><a
+                                                                            href="result_broken.html"><i
+                                                                            class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
                                                             </tr>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="result_failure.html"><i class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                        <a href="result_failure.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
                                                                 <td class="automated-stats">14%</td>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="result_error.html"><i class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                        <a href="result_error.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
                                                                 <td class="automated-stats">14%</td>
                                                             <tr>
-                                                                <td class="aggregate-result-count indented-error-category"><i
-                                                                        class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
                                                                 </td>
                                                                 <td class="automated-stats">0</td>
                                                                 <td class="automated-stats"> </td>
@@ -300,6 +360,137 @@
                                                 </div>
 
 
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3>Functional Coverage Overview</h3>
+
+                                                            <table class="table feature-coverage-table"
+                                                                   id="Know_Your_Customer_Rules">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Know your customer rules</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">Scenarios</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">% Pass</th>
+                                                                    <th style="" width:7.5em;
+                                                                    ">Result</th>
+                                                                    <th>Coverage</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                                <a href="know_your_customer_rules_business_activities.html">Business  activities</a>
+                                                                        </td>
+                                                                        <td>7</td>
+                                                                        <td>71%</td>
+                                                                        <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 71%; background-color: #30cb23"
+                                                                                         aria-valuenow="5"
+                                                                                         title="71% success"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 14%; background-color: #f8001f"
+                                                                                         aria-valuenow="1"
+                                                                                         title="14% failure"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                                    <div class="progress-bar"
+                                                                                         role="progressbar"
+                                                                                         style="width: 14%; background-color: darkorange"
+                                                                                         aria-valuenow="1"
+                                                                                         title="14% error"
+                                                                                         aria-valuemin="0"
+                                                                                         aria-valuemax="100">
+                                                                                    </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Country  risk
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Enhanced  due  diligence
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Standard  due  diligence
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Politically  exposed  persons
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Customer  risk
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                                Non  face  to  face  customers
+                                                                        </td>
+                                                                        <td>0</td>
+                                                                        <td>0%</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
                                                     <div class="col-sm-6">
@@ -315,7 +506,9 @@
                                                                 <td class="error-color top-list-title">
                                                                     <a href="errortype_java.lang.assertionerror.html"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> Assertion error</a>
                                                                 </td>
-                                                                <td><span class="badge failure-badge">1</span></td>
+                                                                <td><span
+                                                                        class="badge failure-badge">1</span>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -325,8 +518,12 @@
                                                         <table class="table">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="failure-color top-list-title"><a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a></td>
-                                                                    <td><span class="badge failure-badge">14%</span></td>
+                                                                    <td class="failure-color top-list-title"><a
+                                                                            href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                                    </td>
+                                                                    <td><span
+                                                                            class="badge failure-badge">14%</span>
+                                                                    </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -338,8 +535,10 @@
                                                         <h3>Tags</h3>
 
                                                         <span>
-                                                            <a href="capability_customer_due_diligence_sl_customer_acceptance_policy.html">
-                                                                <span class="badge" style="background-color:darkorange; margin:1em;padding:4px;"><i class="fa fa-tag"></i> Customer due diligence/Customer acceptance policy (capability)&nbsp;&nbsp;&nbsp;7</span>
+                                                            <a href="know_your_customer_rules_business_activities.html">
+                                                                <span class="badge"
+                                                                      style="background-color:darkorange; margin:1em;padding:4px;"><i
+                                                                        class="fa fa-tag"></i> Business_Activities (Know_Your_Customer_Rules)&nbsp;&nbsp;&nbsp;7</span>
                                                             </a>
                                                         </span>
                                                     </div>
@@ -366,16 +565,17 @@
                                                 <tbody>
                                                 <tr class="scenario-result ERROR">
                                                     <td>
-                                                            <a href="feature_customer_acceptance_policy_sl_business_activities.html">Business Activities</a>
+                                                            <a href="feature_business_activities.html">Business Activities</a>
                                                     </td>
                                                     <td>
                                                         <a href="business_activities_the_business_activity_risk_factor_for_an_industry.html">The business activity risk factor for an industry</a>
                                                                    (7 examples)
                                                     </td>
                                                     <td>2</td>
-                                                    <td>00:49:33</td>
+                                                    <td>21:36:06</td>
                                                     <td>00:00</td>
-                                                    <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span style="display:none">ERROR</span></td>
+                                                    <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span
+                                                            style="display:none">ERROR</span></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -410,7 +610,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <span class="version">Serenity BDD version 2.0.5</span>
+            <span class="version">Serenity BDD version 2.0.7</span>
         </div>
     </div>
 </div>
